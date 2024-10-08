@@ -15,7 +15,10 @@ const Header = () => {
             }}
             className="header__container__identity_logo"
           />
-          <span className="header__container__identity_name">
+          <span
+            style={{ color: brightness === true ? "#83d4ff" : "white" }}
+            className="header__container__identity_name"
+          >
             박 성 현 ( 朴 盛 玄 )
           </span>
         </div>
