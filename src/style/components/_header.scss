@@ -1,0 +1,48 @@
+.header {
+  &__container {
+    @include flex(between, center);
+    height: 90px;
+    padding: 0 20px;
+    background: $black;
+
+    &__identity {
+      @include flex;
+      &_logo {
+        width: 70px;
+        height: 70px;
+        margin-right: 30px;
+        border-radius: 50%;
+        background-image: url("/logo.png");
+        background-size: contain;
+        cursor: pointer;
+      }
+
+      &_name {
+        @include text-style(30, $white, 400);
+      }
+    }
+
+    &__contact {
+      @include flex;
+      padding: 0 30px;
+      gap: 20px;
+      &_email {
+        width: 40px;
+        height: 40px;
+        background-image: url("/email.png");
+        background-size: contain;
+        cursor: pointer;
+      }
+
+      &_github {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: $white;
+        background-image: url("/github.png");
+        background-size: contain;
+        cursor: pointer;
+      }
+    }
+  }
+}

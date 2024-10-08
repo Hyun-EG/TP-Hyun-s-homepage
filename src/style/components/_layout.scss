@@ -1,0 +1,22 @@
+::selection {
+  background-color: #83d4ff;
+  color: $white;
+}
+
+input::placeholder {
+  color: #d191fb;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #d191fb;
+  border-radius: 10px;
+  border: 3px solid #f0f0f0;
+}

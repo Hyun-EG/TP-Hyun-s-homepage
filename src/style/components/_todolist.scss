@@ -1,0 +1,94 @@
+.toDoList {
+  &__container {
+    width: 600px;
+    border: 1px solid #d191fb;
+    border-radius: 12px;
+
+    &__header {
+      @include flex(start, center);
+      padding: 10px 20px;
+      gap: 20px;
+      border-bottom: 1px solid #d191fb;
+
+      &_title {
+        @include text-style(16, #d191fb, 400);
+        cursor: pointer;
+
+        &:hover {
+          color: #83d4ff;
+        }
+      }
+    }
+    &__main {
+      &__inputArea {
+        @include flex(start, center);
+        &_input {
+          @include text-style(13, #d191fb, 400);
+          width: 550px;
+          height: 20px;
+          padding: 0 10px;
+          border: none;
+          border-bottom: 1px solid #d191fb;
+          outline: none;
+        }
+        &_btn {
+          @include text-style(12, $white, 400);
+          width: 50px;
+          height: 20px;
+          background: #d191fb;
+          border: 2px solid #d191fb;
+        }
+      }
+      &__taskArea {
+        height: 200px;
+        overflow-y: scroll;
+        &__taskList {
+          @include flex(between, center);
+          padding: 10px;
+          border-bottom: 1px solid #d191fb;
+
+          &:last-child {
+            border: none;
+          }
+
+          &__editTask {
+            @include flex(start, center);
+
+            &_input {
+              border: 1px solid #d191fb;
+              outline: none;
+              color: #d191fb;
+            }
+
+            &_btn {
+              @include text-style(12, $white, 400);
+              height: 20px;
+              background: #d191fb;
+            }
+          }
+
+          &_tasks {
+            @include text-style(14, #d191fb, 400);
+          }
+
+          &__options {
+            @include flex;
+            gap: 10px;
+            &_check {
+              @include text-style(14, #d191fb, 400);
+              cursor: pointer;
+            }
+            &_remove {
+              @include text-style(14, #d191fb, 400);
+              cursor: pointer;
+            }
+            &_edit {
+              @include text-style(14, #d191fb, 400);
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+}
