@@ -26,6 +26,23 @@
       @include flex;
       padding: 0 30px;
       gap: 20px;
+
+      &_sun {
+        width: 40px;
+        height: 40px;
+        background-image: url("/sun.png");
+        background-size: cover;
+        cursor: pointer;
+      }
+      &_moon {
+        width: 40px;
+        height: 40px;
+        background-image: url("/moon.png");
+        background-size: cover;
+
+        cursor: pointer;
+      }
+
       &_email {
         width: 40px;
         height: 40px;

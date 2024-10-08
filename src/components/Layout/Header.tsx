@@ -1,6 +1,9 @@
 import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const Header = () => {
+  const [brightness, setBrightness] = useState(false);
+
   const navigate = useNavigate();
   return (
     <div className="header">
@@ -17,6 +20,23 @@ const Header = () => {
           </span>
         </div>
         <div className="header__container__contact">
+          {brightness === true ? (
+            <div
+              onClick={() => {
+                setBrightness(false);
+                document.body.style.backgroundColor = "white";
+              }}
+              className="header__container__contact_sun"
+            />
+          ) : (
+            <div
+              onClick={() => {
+                setBrightness(true);
+                document.body.style.backgroundColor = "black";
+              }}
+              className="header__container__contact_moon"
+            />
+          )}
           <div
             onClick={() => {
               const email = "codiee@naver.com";
