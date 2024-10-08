@@ -21,6 +21,12 @@ const ToDoList = () => {
     }
   }
 
+  function inputKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
+    if (e.key === "Enter") {
+      totalTask();
+    }
+  }
+
   function removeArr(index: number) {
     const resultList = tasks.filter((_, i) => i !== index);
     const updatedCheckedTasks = checkedTasks.filter((_, i) => i !== index);
@@ -85,6 +91,7 @@ const ToDoList = () => {
             <input
               value={inputValue}
               onChange={addTask}
+              onKeyDown={inputKeyDown}
               className="toDoList__container__main__inputArea_input"
               type="text"
               placeholder="Please add your tasks here.."
