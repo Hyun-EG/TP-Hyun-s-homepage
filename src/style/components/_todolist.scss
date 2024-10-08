@@ -5,18 +5,26 @@
     border-radius: 12px;
 
     &__header {
-      @include flex(start, center);
+      @include flex(between, center);
       padding: 10px 20px;
-      gap: 20px;
       border-bottom: 1px solid #d191fb;
 
-      &_title {
-        @include text-style(16, #d191fb, 400);
-        cursor: pointer;
+      &__titles {
+        @include flex(start, center);
+        gap: 20px;
 
-        &:hover {
-          color: #83d4ff;
+        &_title {
+          @include text-style(16, #d191fb, 400);
+          cursor: pointer;
+
+          &:hover {
+            color: #83d4ff;
+          }
         }
+      }
+
+      &__time {
+        @include text-style(16, #d191fb, 400);
       }
     }
     &__main {

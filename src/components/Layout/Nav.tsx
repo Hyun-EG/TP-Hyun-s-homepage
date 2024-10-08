@@ -63,7 +63,7 @@ const Nav = () => {
               className="nav__container__btnArea"
             >
               <div className="nav__container__btnArea_btn">
-                숨기기 <span className="arrow">▲</span>
+                Hide <span className="arrow">▲</span>
               </div>
             </div>
           </>

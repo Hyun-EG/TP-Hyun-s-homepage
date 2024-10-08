@@ -7,6 +7,16 @@ const ToDoList = () => {
   const [editValue, setEditValue] = useState("");
   const [checkedTasks, setCheckedTasks] = useState<boolean[]>([]);
   const [filter, setFilter] = useState<"all" | "notDone" | "done">("all");
+  const [isAll, setIsAll] = useState(true);
+  const [isNotDone, setIsNotDone] = useState(false);
+  const [isDone, setIsDone] = useState(false);
+
+  const getCurrentTime = () => {
+    const now = new Date();
+    const day = (now.getMonth() + 1).toString().padStart(2, "0");
+    const date = now.getDate().toString().padStart(2, "0");
+    return `${day}월 ${date}일`;
+  };
 
   function addTask(e: React.ChangeEvent<HTMLInputElement>) {
     const value = e.target.value;
@@ -67,23 +77,46 @@ const ToDoList = () => {
     <div className="toDoList">
       <div className="toDoList__container">
         <div className="toDoList__container__header">
-          <div
-            className="toDoList__container__header_title"
-            onClick={() => setFilter("all")}
-          >
-            All
+          <div className="toDoList__container__header__titles">
+            <div
+              className="toDoList__container__header__titles_title"
+              onClick={() => {
+                setFilter("all");
+                setIsAll(true);
+                setIsNotDone(false);
+                setIsDone(false);
+              }}
+              style={{ color: isAll === true ? "#83d4ff" : "#d191fb" }}
+            >
+              All
+            </div>
+            <div
+              className="toDoList__container__header__titles_title"
+              onClick={() => {
+                setFilter("notDone");
+                setIsNotDone(true);
+                setIsAll(false);
+                setIsDone(false);
+              }}
+              style={{ color: isNotDone === true ? "#83d4ff" : "#d191fb" }}
+            >
+              Not Done
+            </div>
+            <div
+              className="toDoList__container__header__titles_title"
+              onClick={() => {
+                setFilter("done");
+                setIsDone(true);
+                setIsAll(false);
+                setIsNotDone(false);
+              }}
+              style={{ color: isDone === true ? "#83d4ff" : "#d191fb" }}
+            >
+              Done
+            </div>
           </div>
-          <div
-            className="toDoList__container__header_title"
-            onClick={() => setFilter("notDone")}
-          >
-            Not Done
-          </div>
-          <div
-            className="toDoList__container__header_title"
-            onClick={() => setFilter("done")}
-          >
-            Done
+          <div className="toDoList__container__header__time">
+            {getCurrentTime()}
           </div>
         </div>
         <div className="toDoList__container__main">
@@ -129,6 +162,8 @@ const ToDoList = () => {
                     style={{
                       textDecoration:
                         checkedTasks[index] === true ? "line-through" : "none",
+                      color:
+                        checkedTasks[index] === true ? "#83d4ff" : "#d191fb",
                     }}
                     className="toDoList__container__main__taskArea__taskList_tasks"
                   >
