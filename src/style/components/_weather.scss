@@ -1,0 +1,36 @@
+.weather {
+  &__container {
+    @include column-flex;
+    @include text-style(20, #d191fb, 400);
+    width: 200px;
+    height: 262px;
+    padding: 10px;
+    gap: 10px;
+    border: 1px solid #d191fb;
+    border-radius: 12px;
+
+    &_title {
+      @include text-style(20, #83d4ff, 700);
+    }
+    &_location {
+      &_value {
+        @include text-style(18, #83d4ff, 400);
+        padding: 0 10px;
+      }
+    }
+    &_temperature {
+      &_value {
+        @include text-style(15, #83d4ff, 400);
+        padding: 0 10px;
+      }
+    }
+
+    &_img {
+      width: 100px;
+      height: 100px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+}

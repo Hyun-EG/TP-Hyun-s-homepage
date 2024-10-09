@@ -1,0 +1,12 @@
+.dashboard {
+  @include column-flex(center, start);
+
+  &__container {
+    @include flex;
+    gap: 20px;
+    &__toDoList {
+    }
+    &__weather {
+    }
+  }
+}
