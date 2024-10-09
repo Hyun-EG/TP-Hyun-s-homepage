@@ -1,3 +1,7 @@
+body {
+  background: $black;
+}
+
 ::selection {
   background-color: #83d4ff;
   color: $white;
@@ -8,7 +12,8 @@ input::placeholder {
 }
 
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -18,5 +23,5 @@ input::placeholder {
 ::-webkit-scrollbar-thumb {
   background-color: #d191fb;
   border-radius: 10px;
-  border: 3px solid #f0f0f0;
+  cursor: pointer;
 }

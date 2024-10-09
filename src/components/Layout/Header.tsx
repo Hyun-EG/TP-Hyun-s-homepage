@@ -27,17 +27,17 @@ const Header = () => {
             <div
               onClick={() => {
                 setBrightness(false);
-                document.body.style.backgroundColor = "white";
+                document.body.style.backgroundColor = "black";
               }}
-              className="header__container__contact_sun"
+              className="header__container__contact_moon"
             />
           ) : (
             <div
               onClick={() => {
                 setBrightness(true);
-                document.body.style.backgroundColor = "black";
+                document.body.style.backgroundColor = "white";
               }}
-              className="header__container__contact_moon"
+              className="header__container__contact_sun"
             />
           )}
           <div
