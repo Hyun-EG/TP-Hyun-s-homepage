@@ -11,6 +11,7 @@
 
     &_title {
       @include text-style(20, #83d4ff, 700);
+      margin-bottom: 20px;
     }
     &_location {
       &_value {
@@ -19,6 +20,7 @@
       }
     }
     &_temperature {
+      width: 113.25px;
       &_value {
         @include text-style(15, #83d4ff, 400);
         padding: 0 10px;
